@@ -1,4 +1,5 @@
 Installation:
+
     git clone git://github.com/rsmoke/dotfiles.git ~/.dotfiles
 
 Create symlinks:
