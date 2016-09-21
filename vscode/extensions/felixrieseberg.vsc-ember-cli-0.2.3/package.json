@@ -1,0 +1,131 @@
+{
+	"name": "vsc-ember-cli",
+	"displayName": "Ember Cli in Visual Studio Code",
+	"description": "Turn Visual Studio Code into an Ember Cli IDE",
+	"version": "0.2.3",
+	"publisher": "felixrieseberg",
+	"engines": {
+		"vscode": "^0.10.0"
+	},
+	"license": "MIT",
+	"categories": [
+		"Other"
+	],
+	"keywords": [
+		"Travis",
+		"Travis CI",
+		"Build Status",
+		"CI"
+	],
+	"icon": "icon.png",
+	"galleryBanner": {
+		"color": "#c7c7c7",
+		"theme": "light"
+	},
+	"activationEvents": [
+		"onCommand:extension.addon",
+		"onCommand:extension.setupProject",
+		"onCommand:extension.build",
+		"onCommand:extension.serve",
+		"onCommand:extension.generate",
+		"onCommand:extension.destroy",
+		"onCommand:extension.init",
+		"onCommand:extension.new",
+		"onCommand:extension.install",
+		"onCommand:extension.version",
+		"onCommand:extension.test",
+		"onCommand:extension.testServer",
+		"workspaceContains:.ember-cli"
+	],
+	"bugs": {
+		"url": "https://github.com/felixrieseberg/vsc-ember-cli/issues"
+	},
+	"homepage": "https://github.com/felixrieseberg/vsc-ember-cli/blob/master/README.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/felixrieseberg/vsc-ember-cli.git"
+	},
+	"main": "./out/extension",
+	"contributes": {
+		"snippets": [
+			{
+				"language": "handlebars",
+				"path": "./snippets/template-helpers.json"
+			}
+		],
+		"commands": [
+			{
+				"command": "extension.addon",
+				"title": "Ember: Addon Folder Structure"
+			},
+			{
+				"command": "extension.setupProject",
+				"title": "Ember: Setup Project for Visual Studio Code"
+			},
+			{
+				"command": "extension.build",
+				"title": "Ember: Build App"
+			},
+			{
+				"command": "extension.serve",
+				"title": "Ember: Serve (Start, Stop, Restart)"
+			},
+			{
+				"command": "extension.generate",
+				"title": "Ember: Generate Blueprint"
+			},
+			{
+				"command": "extension.destroy",
+				"title": "Ember: Destroy Blueprint"
+			},
+			{
+				"command": "extension.init",
+				"title": "Ember: Init App"
+			},
+			{
+				"command": "extension.new",
+				"title": "Ember: New App"
+			},
+			{
+				"command": "extension.install",
+				"title": "Ember: Install Addon"
+			},
+			{
+				"command": "extension.version",
+				"title": "Ember: Version Display"
+			},
+			{
+				"command": "extension.test",
+				"title": "Ember: Test"
+			},
+			{
+				"command": "extension.testServer",
+				"title": "Ember: Test Server (Start, Stop, Restart)"
+			},
+			{
+				"command": "extension.installTypings",
+				"title": "Ember: Install Typings"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "tsc && node ./node_modules/vscode/bin/compile",
+		"compile": "tsc && node ./node_modules/vscode/bin/compile -watch -p ./",
+		"test": "tslint ./src/*"
+	},
+	"devDependencies": {
+		"tslint": "^3.2.0",
+		"typescript": "^1.7.3",
+		"vscode": "^0.10.6"
+	},
+	"dependencies": {
+		"fs-extra": "^0.26.7",
+		"merge": "^1.2.0",
+		"path-exists": "^2.1.0"
+	},
+	"__metadata": {
+		"id": "88899cf7-33cb-467e-8f51-3a2d7e4ab3c2",
+		"publisherId": "54af948a-6ab3-4df3-8dc0-cfa3ca195d8e",
+		"publisherDisplayName": "Felix Rieseberg"
+	}
+}
