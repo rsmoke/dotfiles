@@ -62,8 +62,15 @@ source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
+# set local sql password
+export SQLPWD=I9qACl7Jl3xobBZqQM
+export SECRET_KEY_BASE=638008acee976e4f56e59e667f64aae619916bf9fbfa8bedf75dba79cd1a6db9ec7a030e2aadeda4321a7e9a589217fb9191042133c559683318eb52a1add0ac
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
+# set tnsname_ora file path
+export TNS_ADMIN="$HOME/RailsProjects/tnsname_ora"
+export TNS_USER="rmt_lsaadhoc_datawhse1"
+export TNS_PWD="lsa8pdq"
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -93,3 +100,5 @@ export NVM_DIR="$HOME/.nvm"
 
 source $HOME/.zshenv
 . `brew --prefix`/etc/profile.d/z.sh
+
+eval "$(rbenv init -)"
