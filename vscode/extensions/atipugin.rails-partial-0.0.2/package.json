@@ -1,0 +1,52 @@
+{
+	"name": "rails-partial",
+	"displayName": "Rails Partial",
+	"description": "Quick way to create a Rails partial",
+	"version": "0.0.2",
+	"publisher": "atipugin",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/atipugin/vscode-rails-partial.git"
+	},
+	"scripts": {
+		"postinstall": "node ./node_modules/vscode/bin/install"
+	},
+	"engines": {
+		"vscode": "^1.20.0"
+	},
+	"main": "./extension",
+	"activationEvents": [
+		"onCommand:rails-partial.createPartial"
+	],
+	"contributes": {
+		"commands": [
+			{
+				"command": "rails-partial.createPartial",
+				"title": "Rails Partial: Create partial"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "rails-partial.createPartial",
+				"key": "alt+p"
+			}
+		]
+	},
+	"categories": [
+		"Other"
+	],
+	"keywords": [
+		"Ruby on Rails"
+	],
+	"devDependencies": {
+		"vscode": "^1.1.10"
+	},
+	"dependencies": {
+		"mkdirp": "^0.5.1"
+	},
+	"__metadata": {
+		"id": "cecd3c12-464f-4385-847a-402db042eb28",
+		"publisherId": "3ad052f7-bdfc-42c2-8200-b3d58494dc6b",
+		"publisherDisplayName": "Alexander Tipugin"
+	}
+}

@@ -1,0 +1,9 @@
+**/node_modules
+**/out
+
+binaries/*
+!binaries/2.0.2
+
+registration_key
+auth
+sig

@@ -1,4 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/Users/rsmoke/Sites/SocJobRefRequest/.git'
-let g:netrw_dirhist_2='/Users/rsmoke/Sites/mis_project_request/.gitignore'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/rsmoke/.oh-my-zsh'
+let g:netrw_dirhist_2='/Users/rsmoke/.oh-my-zsh/plugins'
+let g:netrw_dirhist_3='/usr/local/etc/php/7.2'
