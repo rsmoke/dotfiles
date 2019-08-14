@@ -1,0 +1,72 @@
+#!/bin/bash
+# This script is for publishing to DEV or PROD for a particular
+# project that is served by the cPanel instances
+
+# Requires that you have your public ssh key on the cPanel instance
+# to do this run these commands in an ssh/terminal session on the
+# cPanel instance
+#  mkdir -p ~/.ssh
+#  touch ~/.ssh/authorized_keys
+#  chmod -R go-rwx ~/.ssh/
+
+# Copies the contents of the id_rsa.pub file to your clipboard
+# $ pbcopy < ~/.ssh/id_rsa.pub
+
+# Copy your public key to the new file you just created
+#  vim  ~/.ssh/authorized_keys
+
+location="$1"
+## echo "Location is set as $location"
+upload_site() {
+# Get working directory
+local working_directory=${PWD##*/}
+
+# Set default server to publish to variable
+local server_name=""
+
+case "$location" in
+
+# Match development environment
+DEV)
+#  echo "you are in DEV"
+  server_name="csgsmoke@csgrsmoke.lsait.lsa.umich.edu"
+  ;; # Stop checking further
+
+# Match english production environment
+QUILL)
+#  echo "you are in QUILL"
+  server_name="quilleng@quill.english.lsa.umich.edu"
+  ;;
+
+# Match MIS production environment
+MIS)
+#  echo "you are in MIS"
+  server_name="lsamis@lsa-mis.dean.lsa.umich.edu"
+  ;;
+
+# Match sociology production environment
+HESTIA)
+#  echo "you are in HESTIA"
+  server_name="hestia@hestia.soc.lsa.umich.edu"
+  ;;
+
+  # Match CEAL production environment
+CEAL)
+#  echo "you are in CEAL"
+  server_name="verecealadmin@vehiclereport.ceal.lsa.umich.edu"
+  ;;
+
+# Default action
+*)
+#  echo "you are in catch-all"
+  server_name="csgsmoke@csgrsmoke.lsait.lsa.umich.edu"
+  ;;
+esac # END case
+
+rsync -avz --exclude-from=/Users/rsmoke/Sites/rsync_excludes -e "ssh" ~/Sites/$working_directory/ $server_name:public_html/$working_directory/
+
+echo "You have published the site located at  ~/Sites/$working_directory/ to the server location $server_name:public_html/$working_directory/"
+return
+}
+
+upload_site

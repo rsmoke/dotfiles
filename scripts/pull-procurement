@@ -1,0 +1,8 @@
+cd /usr/local/miserver/website/web/docs/access && echo `pwd` && git pull
+cd ../lib && echo `pwd` && git pull
+cd ../openlib && echo `pwd` && git pull
+cd ../list && echo `pwd` && git pull
+cd ../order && echo `pwd` && git pull
+cd ../search && echo `pwd` && git pull
+cd ../share && echo `pwd` && git pull
+cd ../../lib && echo `pwd` && git pull
